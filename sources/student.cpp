@@ -1,6 +1,4 @@
-// Copyright 2020 Andrey-torix
-//
-// Created by vs on 19.12.2020.
-//
+// Copyright 2020 Andrey_torix
+
 #include "../include/student.h"
 
