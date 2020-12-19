@@ -1,6 +1,6 @@
-// Copyright 2020 mrmamongo
+// Copyright 2020 Andrey-torix
 //
-// Created by lamp on 09.11.2020.
+// Created by vs on 19.12.2020.
 //
 #include "../include/student.h"
 
