@@ -1,3 +1,5 @@
+// Copyright 2020 Andreytorix
+
 #include <gtest/gtest.h>
 #include "../include/student.h"
 
