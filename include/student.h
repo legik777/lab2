@@ -1,7 +1,3 @@
-//
-// Created by lamp on 09.11.2020.
-//
-
 #ifndef PARSER_STUDENTS_H
 #define PARSER_STUDENTS_H
 
