@@ -1,6 +1,5 @@
-//
-// Created by Andrey-torix on 19.12.2020.
-//
+// Copyright 2020 Andrey_torix
+
 #ifndef PARSER_STUDENTS_H
 #define PARSER_STUDENTS_H
 
