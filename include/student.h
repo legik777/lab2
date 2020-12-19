@@ -139,7 +139,5 @@ vector<student> parseJS(json js) {
 	return students;
 }
 
-// 1. Дружественная функция
 
-// friend std::ostream& operator>>(std::ostream& os, const Student& student);
-#endif  // PARSER_STUDENTS_H
+#endif  
