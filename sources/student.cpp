@@ -1,4 +1,4 @@
-// Copyright 2020 Andrey_torix
+// Copyright 2020 Andreytorix
 
 #include "../include/student.h"
 
