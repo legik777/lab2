@@ -1,4 +1,4 @@
-// Copyright 2020 Andrey_torix
+// Copyright 2020 Andreytorix
 
 #ifndef PARSER_STUDENTS_H
 #define PARSER_STUDENTS_H
