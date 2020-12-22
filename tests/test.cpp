@@ -74,7 +74,7 @@ TEST(SP, defaultType) {
         testClass(100500800, "testfL"));
 }
 
-TEST(SP, SwapTestTempType) {
+TEST(SP, tochange) {
     int firstValue = 5;
 
     SharedPtr<int> pvalue1_1(&firstValue);
@@ -95,7 +95,7 @@ TEST(SP, SwapTestTempType) {
     EXPECT_EQ(*pvalue2_1, 5);
 }
 
-TEST(SP, SwapTestCustomType) {
+TEST(SP, tochangedefaultType) {
     testClass firstObject{
         10, "First"
     };
@@ -123,7 +123,7 @@ class NotCopiable {
 public:
     NotCopiable& operator= (NotCopiable&) = delete;
 };
-
+/*
 TEST(ErrorTest, TestCopiable) {
     try {
         NotCopiable notCopiableObject;
@@ -164,4 +164,4 @@ TEST(ErrorTest, TestCopiableOperator) {
         std::string ref = "ERROR: Not copiable type!";
         EXPECT_EQ(ref, er.what());
     }
-}
+}*/
