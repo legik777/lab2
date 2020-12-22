@@ -22,7 +22,7 @@ HunterGate(
 
 
 #имя проекта
-project(tests)
+project(lab3)
 string(APPEND CMAKE_CXX_FLAGS " -pedantic -Werror -Wall -Wextra")
 string(APPEND CMAKE_CXX_FLAGS " -Wno-unused-command-line-argument")
 string(APPEND CMAKE_CXX_FLAGS " -Wshadow -Wnon-virtual-dtor")
@@ -30,23 +30,38 @@ string(APPEND CMAKE_CXX_FLAGS " -Wshadow -Wnon-virtual-dtor")
 hunter_add_package(GTest)
 find_package(GTest CONFIG REQUIRED)
 
+#hunter_add_package(Boost COMPONENTS system filesystem)
+#find_package(Boost 1.72.0 CONFIG REQUIRED system filesystem)
 
-
+add_library(PS STATIC
+  # enum your files and delete this comment
+  ${CMAKE_CURRENT_SOURCE_DIR}/sources/PS.cpp
+)
 add_executable(tests
   # TODO: enum your files and delete this comment
   ${CMAKE_CURRENT_SOURCE_DIR}/tests/test.cpp
 )
 
+# TODO: change template word to project name and delete this comment
+target_include_directories(PS
+  PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
 
 target_include_directories(tests
   PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
-target_link_libraries(tests GTest::gtest_main tests)
+# TODO: change template word to project name and delete this comment
+target_link_libraries(tests GTest::gtest_main PS)
 
+#target_link_libraries(boostf Boost::filesystem)
+#target_link_libraries(testf Boost::filesystem)
+
+#file(COPY misc DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
 enable_testing()
 add_test(NAME unit_tests COMMAND tests)
 
+#file(COPY misc DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
 if(BUILD_COVERAGE)
   function(ENABLE_PROJECT_COVERAGE PROJECT)
@@ -59,7 +74,7 @@ if(BUILD_COVERAGE)
   list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
   find_package(codecov)
   # TODO: change template word to project name and delete this comment
-  #enable_project_coverage(boostf)
+  enable_project_coverage(boostf)
   enable_project_coverage(tests)
   list(APPEND LCOV_REMOVE_PATTERNS "'${PROJECT_SOURCE_DIR}/tests/*'")
   coverage_evaluate()
