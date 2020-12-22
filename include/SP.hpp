@@ -104,6 +104,7 @@ public:
     inline auto GetCount() const -> size_t {
         return (counter != nullptr) ? counter->getCount() : 0;
     }
+
 private:
     inline void AddPoint() {
         if (counter) {
@@ -115,6 +116,7 @@ private:
             counter->clearPtr();
         }
     }
+
 private:
     T* ptr;
     SCP<T>* counter;
