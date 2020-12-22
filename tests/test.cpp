@@ -1,3 +1,4 @@
+// Copyright 2020 Andreytorix
 #include <utility>
 #include "SP.hpp"
 
