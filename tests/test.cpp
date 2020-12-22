@@ -8,7 +8,8 @@ public:
     int value;
     std::string name;
 
-    explicit MyClass(int value_ = 10, std::string name_ = "Typical Class") { //изменить
+    explicit MyClass(int value_ = 10,
+                     std::string name_ = "Typical Class") { //изменить
         value = value_;
         name = std::move(name_);
     }
