@@ -51,7 +51,7 @@ target_include_directories(tests
   PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 # TODO: change template word to project name and delete this comment
-target_link_libraries(tests GTest::gtest_main SP)
+target_link_libraries(tests GTest::gtest_main lab3)
 
 #target_link_libraries(boostf Boost::filesystem)
 #target_link_libraries(testf Boost::filesystem)
