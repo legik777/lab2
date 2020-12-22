@@ -88,7 +88,7 @@ TEST(SPtrTest, TestCustomType) {
         *pobject2,
         MyClass(100500800, "Foo_Link"));
 }
-
+/*
 TEST(SPtrTest, TestSTLContainer) {
     std::vector<int> values{ 1, 2, 3, 4, 5 };
     std::vector<MyClass> objects{
@@ -149,7 +149,7 @@ TEST(SPtrTest, TestSTLContainer) {
     EXPECT_TRUE(pobjects2);
     EXPECT_TRUE(pobjects3);
 }
-
+*/
 TEST(SPtrTest, SwapTestTempType) {
     int firstValue = 5;
 
