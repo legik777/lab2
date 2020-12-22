@@ -41,7 +41,7 @@ add_executable(tests
 target_include_directories(tests
   PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
-target_link_libraries(tests ${PROJECT_NAME} GTest::gtest_main)
+target_link_libraries(tests GTest::gtest_main parser)
 
 
 enable_testing()
