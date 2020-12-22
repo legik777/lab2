@@ -43,7 +43,7 @@ add_executable(tests
 )
 
 # TODO: change template word to project name and delete this comment
-target_include_directories(PS
+target_include_directories(SP
   PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
