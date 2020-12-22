@@ -3,18 +3,18 @@
 #include "SP.hpp"
 #include <gtest/gtest.h>
 
-class MyClass {
+class testClass {
 public:
     int value;
     std::string name;
 
-    explicit MyClass(int value_ = 10,
+    explicit testClass(int value_ = 10,
                      std::string name_ = "Typical Class") { //изменить
         value = value_;
         name = std::move(name_);
     }
 
-    bool operator==(const MyClass& ref) const {
+    bool operator==(const testClass& ref) const {
         bool out = false;
         out = value == ref.value; //изменить
         out = name == ref.name;
@@ -22,46 +22,31 @@ public:
     }
 };
 
-int Foo(int value) {
+int testf(int value) {
     return value + 777;
 }
 
-int Foo_Link(int& value) {
+int testfL(int& value) {
     return value += 999;
 }
 
-MyClass FooClass(MyClass object) {
-    object.name = "Foo";
+testClass testfClass(testClass object) {
+    object.name = "testf";
     object.value = 10500;
     return object;
 }
 
-MyClass FooClass_Link(MyClass& object) {
-    object.name = "Foo_Link";
+testClass testfClass_Link(testClass& object) {
+    object.name = "testfL";
     object.value = 10500800;
     return object;
 }
 
+TEST(SP, defaultType) {
+    testClass testObject;
 
-
-TEST(SPtrTest, TestNullptr) {
-    SharedPtr<int> nullPointer;
-    SharedPtr<MyClass> nullObjectPointer;
-    SharedPtr<std::vector<int>> nullVectorIntPointer;
-    SharedPtr<std::vector<MyClass>> nullVectorMyClassPointer;
-
-
-    EXPECT_FALSE(nullPointer);
-    EXPECT_FALSE(nullObjectPointer);
-    EXPECT_FALSE(nullVectorIntPointer);
-    EXPECT_FALSE(nullVectorMyClassPointer);
-}
-
-TEST(SPtrTest, TestCustomType) {
-    MyClass testObject;
-
-    SharedPtr<MyClass> pobject1(&testObject);
-    SharedPtr<MyClass> pobject2(pobject1);
+    SharedPtr<testClass> pobject1(&testObject);
+    SharedPtr<testClass> pobject2(pobject1);
 
     EXPECT_EQ(pobject1.GetCount(), 2);
     EXPECT_EQ(pobject2.GetCount(), 2);
@@ -78,79 +63,18 @@ TEST(SPtrTest, TestCustomType) {
     EXPECT_TRUE(pobject1);
     EXPECT_TRUE(pobject2);
 
-    EXPECT_EQ(FooClass(*pobject1), MyClass(100500, "Foo"));
-    EXPECT_EQ(FooClass(*pobject2), MyClass(100500, "Foo"));
+    EXPECT_EQ(testfClass(*pobject1), testClass(100500, "testf"));
+    EXPECT_EQ(testfClass(*pobject2), testClass(100500, "testf"));
 
     EXPECT_EQ(
-        FooClass_Link(*pobject1),
-        MyClass(100500800, "Foo_Link"));
+        testfClass_Link(*pobject1),
+        testClass(100500800, "testfL"));
     EXPECT_EQ(
         *pobject2,
-        MyClass(100500800, "Foo_Link"));
+        testClass(100500800, "testfL"));
 }
-/*
-TEST(SPtrTest, TestSTLContainer) {
-    std::vector<int> values{ 1, 2, 3, 4, 5 };
-    std::vector<MyClass> objects{
-        MyClass
-        (10, "First"),
-        MyClass
-        (5, "Second"),
-        MyClass
-        (0, "Last")
-    };
 
-    SharedPtr<std::vector<int>> pvalues(&values);
-    SharedPtr<std::vector<int>> pvalues2(pvalues);
-    SharedPtr<std::vector<int>> pvalues3(pvalues2);
-
-    SharedPtr<std::vector<MyClass>> pobjects(&objects);
-    SharedPtr<std::vector<MyClass>> pobjects2(pobjects);
-    SharedPtr<std::vector<MyClass>> pobjects3(pobjects2);
-
-    EXPECT_EQ((*pvalues)[0], 1);
-    EXPECT_EQ((*pvalues2)[0], 1);
-    EXPECT_EQ((*pvalues3)[0], 1);
-    EXPECT_EQ((*pvalues)[4], 5);
-    EXPECT_EQ((*pvalues2)[4], 5);
-    EXPECT_EQ((*pvalues3)[4], 5);
-
-    EXPECT_EQ((*pvalues).size(), 5);
-    EXPECT_EQ((*pvalues2).size(), 5);
-    EXPECT_EQ((*pvalues3).size(), 5);
-
-    EXPECT_TRUE(pvalues);
-    EXPECT_TRUE(pvalues2);
-    EXPECT_TRUE(pvalues3);
-
-    EXPECT_EQ(pvalues.GetCount(), 3);
-    EXPECT_EQ(pvalues2.GetCount(), 3);
-    EXPECT_EQ(pvalues3.GetCount(), 3);
-
-    EXPECT_EQ((*pobjects)[0].name, "First");
-    EXPECT_EQ((*pobjects)[0].value, 10);
-    EXPECT_EQ((*pobjects2)[0].name, "First");
-    EXPECT_EQ((*pobjects2)[0].value, 10);
-    EXPECT_EQ((*pobjects3)[0].name, "First");
-    EXPECT_EQ((*pobjects3)[0].value, 10);
-
-    EXPECT_EQ((*pobjects)[2].name, "Last");
-    EXPECT_EQ((*pobjects)[2].value, 0);
-    EXPECT_EQ((*pobjects2)[2].name, "Last");
-    EXPECT_EQ((*pobjects2)[2].value, 0);
-    EXPECT_EQ((*pobjects3)[2].name, "Last");
-    EXPECT_EQ((*pobjects3)[2].value, 0);
-
-    EXPECT_EQ((*pobjects).size(), 3);
-    EXPECT_EQ((*pobjects2).size(), 3);
-    EXPECT_EQ((*pobjects3).size(), 3);
-
-    EXPECT_TRUE(pobjects);
-    EXPECT_TRUE(pobjects2);
-    EXPECT_TRUE(pobjects3);
-}
-*/
-TEST(SPtrTest, SwapTestTempType) {
+TEST(SP, SwapTestTempType) {
     int firstValue = 5;
 
     SharedPtr<int> pvalue1_1(&firstValue);
@@ -171,28 +95,28 @@ TEST(SPtrTest, SwapTestTempType) {
     EXPECT_EQ(*pvalue2_1, 5);
 }
 
-TEST(SPtrTest, SwapTestCustomType) {
-    MyClass firstObject{
+TEST(SP, SwapTestCustomType) {
+    testClass firstObject{
         10, "First"
     };
-    MyClass secondObject{
+    testClass secondObject{
         5, "Second"
     };
 
-    SharedPtr<MyClass> pobject1_1(&firstObject);
-    SharedPtr<MyClass> pobject1_2(pobject1_1);
+    SharedPtr<testClass> pobject1_1(&firstObject);
+    SharedPtr<testClass> pobject1_2(pobject1_1);
 
-    SharedPtr<MyClass> pobject2_1(&secondObject);
-    SharedPtr<MyClass> pobject2_2(pobject2_1);
-    SharedPtr<MyClass> pobject2_3(pobject2_2);
+    SharedPtr<testClass> pobject2_1(&secondObject);
+    SharedPtr<testClass> pobject2_2(pobject2_1);
+    SharedPtr<testClass> pobject2_3(pobject2_2);
 
     pobject1_1.Swap(pobject2_1);
 
     EXPECT_EQ(pobject1_1.GetCount(), 3);
     EXPECT_EQ(pobject2_1.GetCount(), 2);
 
-    EXPECT_EQ(*pobject1_1, MyClass(5, "Second"));
-    EXPECT_EQ(*pobject2_1, MyClass(10, "First"));
+    EXPECT_EQ(*pobject1_1, testClass(5, "Second"));
+    EXPECT_EQ(*pobject2_1, testClass(10, "First"));
 }
 
 class NotCopiable {
@@ -241,17 +165,3 @@ TEST(ErrorTest, TestCopiableOperator) {
         EXPECT_EQ(ref, er.what());
     }
 }
-/*
-TEST(ErrorTest, TestAssignableOperator) {
-    try {
-        NotAssignable notAssignableObject;
-
-        SharedPtr<NotAssignable> pointer(&notAssignableObject);
-        SharedPtr<NotAssignable> error = std::move(pointer);
-    }
-    catch (std::runtime_error& er) {
-        std::string ref = "ERROR: Not assignable type!";
-        EXPECT_EQ(ref, er.what());
-    }
-}
-*/
