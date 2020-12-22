@@ -5,6 +5,7 @@
 #include <vector>
 #include <string>
 #include <utility>
+#include <iostream>
 
 template <typename T>
 class SCP {
