@@ -22,7 +22,7 @@ HunterGate(
 
 
 #имя проекта
-project(sharedptr)
+project(tests)
 string(APPEND CMAKE_CXX_FLAGS " -pedantic -Werror -Wall -Wextra")
 string(APPEND CMAKE_CXX_FLAGS " -Wno-unused-command-line-argument")
 string(APPEND CMAKE_CXX_FLAGS " -Wshadow -Wnon-virtual-dtor")
@@ -41,7 +41,7 @@ add_executable(tests
 target_include_directories(tests
   PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
-target_link_libraries(tests GTest::gtest_main sharedptr)
+target_link_libraries(tests GTest::gtest_main tests)
 
 
 enable_testing()
