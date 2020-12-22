@@ -23,11 +23,11 @@ public:
 };
 
 int Foo(int value) {
-    return value + 10;
+    return value + 777;
 }
 
 int Foo_Link(int& value) {
-    return value += 20;
+    return value += 999;
 }
 
 MyClass FooClass(MyClass object) {
@@ -55,31 +55,6 @@ TEST(SPtrTest, TestNullptr) {
     EXPECT_FALSE(nullObjectPointer);
     EXPECT_FALSE(nullVectorIntPointer);
     EXPECT_FALSE(nullVectorMyClassPointer);
-}
-
-TEST(SPtrTest, TestTempType) {
-    int value = 5;
-
-    SharedPtr<int> pvalue1(&value);
-    SharedPtr<int> pvalue2(pvalue1);
-
-    EXPECT_EQ(pvalue1.GetCount(), 2);
-    EXPECT_EQ(pvalue2.GetCount(), 2);
-
-    EXPECT_EQ(*pvalue1, 5);
-    EXPECT_EQ(*pvalue2, 5);
-
-    EXPECT_EQ(*(pvalue1.Get()), 5);
-    EXPECT_EQ(*(pvalue2.Get()), 5);
-
-    EXPECT_TRUE(pvalue1);
-    EXPECT_TRUE(pvalue2);
-
-    EXPECT_EQ(Foo(*pvalue1), 15);
-    EXPECT_EQ(Foo(*pvalue2), 15);
-
-    EXPECT_EQ(Foo_Link(*pvalue1), 25);
-    EXPECT_EQ(*pvalue2, 25);
 }
 
 TEST(SPtrTest, TestCustomType) {
