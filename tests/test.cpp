@@ -44,7 +44,7 @@ MyClass FooClass_Link(MyClass& object) {
 
 
 
-TEST(SharedPtrTest, TestNullptr) {
+TEST(SPtrTest, TestNullptr) {
     SharedPtr<int> nullPointer;
     SharedPtr<MyClass> nullObjectPointer;
     SharedPtr<std::vector<int>> nullVectorIntPointer;
@@ -57,7 +57,7 @@ TEST(SharedPtrTest, TestNullptr) {
     EXPECT_FALSE(nullVectorMyClassPointer);
 }
 
-TEST(SharedPtrTest, TestTempType) {
+TEST(SPtrTest, TestTempType) {
     int value = 5;
 
     SharedPtr<int> pvalue1(&value);
@@ -82,7 +82,7 @@ TEST(SharedPtrTest, TestTempType) {
     EXPECT_EQ(*pvalue2, 25);
 }
 
-TEST(SharedPtrTest, TestCustomType) {
+TEST(SPtrTest, TestCustomType) {
     MyClass testObject;
 
     SharedPtr<MyClass> pobject1(&testObject);
@@ -114,7 +114,7 @@ TEST(SharedPtrTest, TestCustomType) {
         MyClass(100500800, "Foo_Link"));
 }
 
-TEST(SharedPtrTest, TestSTLContainer) {
+TEST(SPtrTest, TestSTLContainer) {
     std::vector<int> values{ 1, 2, 3, 4, 5 };
     std::vector<MyClass> objects{
         MyClass
@@ -175,7 +175,7 @@ TEST(SharedPtrTest, TestSTLContainer) {
     EXPECT_TRUE(pobjects3);
 }
 
-TEST(SharedPtrTest, SwapTestTempType) {
+TEST(SPtrTest, SwapTestTempType) {
     int firstValue = 5;
 
     SharedPtr<int> pvalue1_1(&firstValue);
@@ -196,7 +196,7 @@ TEST(SharedPtrTest, SwapTestTempType) {
     EXPECT_EQ(*pvalue2_1, 5);
 }
 
-TEST(SharedPtrTest, SwapTestCustomType) {
+TEST(SPtrTest, SwapTestCustomType) {
     MyClass firstObject{
         10, "First"
     };
