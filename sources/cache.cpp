@@ -76,7 +76,8 @@ double randomExperiment(size_t size, int testCount) {
     auto end = std::chrono::high_resolution_clock::now();
     delete[] array;
     return
-        static_cast<double>(std::chrono::nanoseconds(end - start).count()) / testCount;
+        static_cast<double>
+        (std::chrono::nanoseconds(end - start).count()) / testCount;
 }
 int main()
 {
@@ -89,35 +90,40 @@ int main()
     std::cout << "        buffer_size: \"0.150mb\"" << std::endl;
     int rarr = 0.150 * 1024 * 1024; //размер массива
     std::cout << "      results:" << std::endl;
-    std::cout << "        duration: \"" << straightExperiment(rarr, tCount) << "\"" << std::endl;
+    std::cout << "        duration: \"" <<
+        straightExperiment(rarr, tCount) << "\"" << std::endl;
     std::cout << "  - experiment:" << std::endl;
     std::cout << "      number: 2" << std::endl;
     std::cout << "      input_data:" << std::endl;
     std::cout << "        buffer_size: \"0.640mb\"" << std::endl;
     rarr = 0.640 * 1024 * 1024; //размер массива
     std::cout << "      results:" << std::endl;
-    std::cout << "        duration: \"" << straightExperiment(rarr, tCount) << "\"" << std::endl;
+    std::cout << "        duration: \"" <<
+        straightExperiment(rarr, tCount) << "\"" << std::endl;
     std::cout << "  - experiment:" << std::endl;
     std::cout << "      number: 3" << std::endl;
     std::cout << "      input_data:" << std::endl;
     std::cout << "        buffer_size: \"0.640mb\"" << std::endl;
     rarr = 5 * 1024 * 1024; //размер массива
     std::cout << "      results:" << std::endl;
-    std::cout << "        duration: \"" << straightExperiment(rarr, tCount) << "\"" << std::endl;
+    std::cout << "        duration: \"" <<
+        straightExperiment(rarr, tCount) << "\"" << std::endl;
     std::cout << "  - experiment:" << std::endl;
     std::cout << "      number: 4" << std::endl;
     std::cout << "      input_data:" << std::endl;
     std::cout << "        buffer_size: \"0.640mb\"" << std::endl;
     rarr = 7 * 1024 * 1024; //размер массива
     std::cout << "      results:" << std::endl;
-    std::cout << "        duration: \"" << straightExperiment(rarr, tCount) << "\"" << std::endl;
+    std::cout << "        duration: \"" <<
+        straightExperiment(rarr, tCount) << "\"" << std::endl;
     std::cout << "  - experiment:" << std::endl;
     std::cout << "      number: 5" << std::endl;
     std::cout << "      input_data:" << std::endl;
     std::cout << "        buffer_size: \"0.640mb\"" << std::endl;
     rarr = 9 * 1024 * 1024; //размер массива
     std::cout << "      results:" << std::endl;
-    std::cout << "        duration: \"" << straightExperiment(rarr, tCount) << "\"" << std::endl;
+    std::cout << "        duration: \"" <<
+        straightExperiment(rarr, tCount) << "\"" << std::endl;
     std::cout << "investigaion:" << std::endl;
     std::cout << "  travel_order: \"back\"" << std::endl;
     std::cout << "  experiments:" << std::endl;
@@ -127,35 +133,40 @@ int main()
     std::cout << "        buffer_size: \"0.150mb\"" << std::endl;
     rarr = 0.150 * 1024 * 1024; //размер массива
     std::cout << "      results:" << std::endl;
-    std::cout << "        duration: \"" << backExperiment(rarr, tCount) << "\"" << std::endl;
+    std::cout << "        duration: \"" <<
+        backExperiment(rarr, tCount) << "\"" << std::endl;
     std::cout << "  - experiment:" << std::endl;
     std::cout << "      number: 2" << std::endl;
     std::cout << "      input_data:" << std::endl;
     std::cout << "        buffer_size: \"0.640mb\"" << std::endl;
     rarr = 0.640 * 1024 * 1024; //размер массива
     std::cout << "      results:" << std::endl;
-    std::cout << "        duration: \"" << backExperiment(rarr, tCount) << "\"" << std::endl;
+    std::cout << "        duration: \"" <<
+        backExperiment(rarr, tCount) << "\"" << std::endl;
     std::cout << "  - experiment:" << std::endl;
     std::cout << "      number: 3" << std::endl;
     std::cout << "      input_data:" << std::endl;
     std::cout << "        buffer_size: \"0.640mb\"" << std::endl;
     rarr = 5 * 1024 * 1024; //размер массива
     std::cout << "      results:" << std::endl;
-    std::cout << "        duration: \"" << backExperiment(rarr, tCount) << "\"" << std::endl;
+    std::cout << "        duration: \"" <<
+        backExperiment(rarr, tCount) << "\"" << std::endl;
     std::cout << "  - experiment:" << std::endl;
     std::cout << "      number: 4" << std::endl;
     std::cout << "      input_data:" << std::endl;
     std::cout << "        buffer_size: \"0.640mb\"" << std::endl;
     rarr = 7 * 1024 * 1024; //размер массива
     std::cout << "      results:" << std::endl;
-    std::cout << "        duration: \"" << backExperiment(rarr, tCount) << "\"" << std::endl;
+    std::cout << "        duration: \"" <<
+        backExperiment(rarr, tCount) << "\"" << std::endl;
     std::cout << "  - experiment:" << std::endl;
     std::cout << "      number: 5" << std::endl;
     std::cout << "      input_data:" << std::endl;
     std::cout << "        buffer_size: \"0.640mb\"" << std::endl;
     rarr = 9 * 1024 * 1024; //размер массива
     std::cout << "      results:" << std::endl;
-    std::cout << "        duration: \"" << backExperiment(rarr, tCount) << "\"" << std::endl;
+    std::cout << "        duration: \"" <<
+        backExperiment(rarr, tCount) << "\"" << std::endl;
     std::cout << "investigaion:" << std::endl;
     std::cout << "  travel_order: \"random\"" << std::endl;
     std::cout << "  experiments:" << std::endl;
@@ -165,33 +176,38 @@ int main()
     std::cout << "        buffer_size: \"0.150mb\"" << std::endl;
     rarr = 0.150 * 1024 * 1024; //размер массива
     std::cout << "      results:" << std::endl;
-    std::cout << "        duration: \"" << randomExperiment(rarr, tCount) << "\"" << std::endl;
+    std::cout << "        duration: \"" <<
+        randomExperiment(rarr, tCount) << "\"" << std::endl;
     std::cout << "  - experiment:" << std::endl;
     std::cout << "      number: 2" << std::endl;
     std::cout << "      input_data:" << std::endl;
     std::cout << "        buffer_size: \"0.640mb\"" << std::endl;
     rarr = 0.640 * 1024 * 1024; //размер массива
     std::cout << "      results:" << std::endl;
-    std::cout << "        duration: \"" << randomExperiment(rarr, tCount) << "\"" << std::endl;
+    std::cout << "        duration: \"" <<
+        randomExperiment(rarr, tCount) << "\"" << std::endl;
     std::cout << "  - experiment:" << std::endl;
     std::cout << "      number: 3" << std::endl;
     std::cout << "      input_data:" << std::endl;
     std::cout << "        buffer_size: \"0.640mb\"" << std::endl;
     rarr = 5 * 1024 * 1024; //размер массива
     std::cout << "      results:" << std::endl;
-    std::cout << "        duration: \"" << randomExperiment(rarr, tCount) << "\"" << std::endl;
+    std::cout << "        duration: \"" <<
+        randomExperiment(rarr, tCount) << "\"" << std::endl;
     std::cout << "  - experiment:" << std::endl;
     std::cout << "      number: 4" << std::endl;
     std::cout << "      input_data:" << std::endl;
     std::cout << "        buffer_size: \"0.640mb\"" << std::endl;
     rarr = 7 * 1024 * 1024; //размер массива
     std::cout << "      results:" << std::endl;
-    std::cout << "        duration: \"" << randomExperiment(rarr, tCount) << "\"" << std::endl;
+    std::cout << "        duration: \"" <<
+        randomExperiment(rarr, tCount) << "\"" << std::endl;
     std::cout << "  - experiment:" << std::endl;
     std::cout << "      number: 5" << std::endl;
     std::cout << "      input_data:" << std::endl;
     std::cout << "        buffer_size: \"0.640mb\"" << std::endl;
     rarr = 9 * 1024 * 1024; //размер массива
     std::cout << "      results:" << std::endl;
-    std::cout << "        duration: \"" << randomExperiment(rarr, tCount) << "\"" << std::endl;
+    std::cout << "        duration: \"" <<
+        randomExperiment(rarr, tCount) << "\"" << std::endl;
 }
