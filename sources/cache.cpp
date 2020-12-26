@@ -72,8 +72,8 @@ double randomExperiment(size_t size, int testCount) { //эксперимент �
     k = 0;
     auto start = std::chrono::high_resolution_clock::now();
     std::set<size_t> used;
-    size_t l;
-    int t = 0;
+    //size_t l;
+    //int t = 0;
     std::vector<int> randZn;
     randZn.clear();
     for (size_t i = 1; i <= size / offset; i++) {
