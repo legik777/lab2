@@ -2,7 +2,7 @@
 #include "cache.hpp"
 #include <iostream>
 #include <gtest/gtest.h>
-
+#include "../sources/cache.cpp"
 TEST(Test, straightBackExperiment) {
         std::cout << "investigaion:" << std::endl;
     std::cout << "  travel_order: \"straight\"" << std::endl;
@@ -14,7 +14,7 @@ TEST(Test, straightBackExperiment) {
     int rarr = 0.150 * 1024 * 1024; //размер массива
     std::cout << "      results:" << std::endl;
     std::cout << "        duration: \"" <<
-        testExperiments::straightExperiment(rarr, tCount) << "\"" << std::endl;
+       straightExperiment(rarr, tCount) << "\"" << std::endl;
     std::cout << "  - experiment:" << std::endl;
     std::cout << "      number: 2" << std::endl;
     std::cout << "      input_data:" << std::endl;
