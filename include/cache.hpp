@@ -12,6 +12,7 @@
 
 static const size_t offset = 16;
 static const int tCount = 1000;
+static const double cache_Size[5] = {0.320, 0.640, 5, 7, 10.5};
 int* initMem(int len);
 double straightExperiment(size_t size, int testCount);
 double backExperiment(size_t size, int testCount);
