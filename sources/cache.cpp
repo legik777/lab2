@@ -1,6 +1,5 @@
 // Copyright 2020 Andreytorix
 #include <cache.hpp>
-namespace testExperiments {
 void voidFunc(int p) {
     p = p + 1;
 }
@@ -78,4 +77,4 @@ double randomExperiment(size_t size, int testCount) {
         static_cast<double>
         (std::chrono::nanoseconds(end - start).count()) / testCount;
 }
-}
+
