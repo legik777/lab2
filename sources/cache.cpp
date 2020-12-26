@@ -5,10 +5,9 @@
 //прогрев памяти
 int* initMem(int len) {
     int* arr = new int[len];
-    int k;
     for (int i = 0; i < len; i++) {
         arr[i] = std::rand();
-        k = arr[i];
+       int k = arr[i];
     }
     return arr;
 }
