@@ -16,15 +16,15 @@ int* initMem(int len) {
 }
 
 double straightExperiment(size_t size,
-                          int testCount) { 
-    int*  array = initMem(size); 
+                          int testCount) {
+    int*  array = initMem(size);
     int k;
-    for (size_t i = 0; i < size; i += offset) { 
+    for (size_t i = 0; i < size; i += offset) {
         k += array[i];
     }
     k = 0;
-    auto start = std::chrono::high_resolution_clock::now(); 
-    for (size_t i = 0; i < size * testCount; i += offset) { 
+    auto start = std::chrono::high_resolution_clock::now();
+    for (size_t i = 0; i < size * testCount; i += offset) {
         k += array[i % size];
     }
     auto end = std::chrono::high_resolution_clock::now();
@@ -33,7 +33,6 @@ double straightExperiment(size_t size,
     return
         static_cast<double>\
         (std::chrono::nanoseconds(end - start).count()) / testCount;
-    
 }
 double backExperiment(size_t size, int testCount) {
     int* array = initMem(size);
@@ -56,14 +55,12 @@ double backExperiment(size_t size, int testCount) {
 double randomExperiment(size_t size, int testCount) {
     int* array = initMem(size);
     int k = 0;
-    for (size_t i = 0; i < size; i += offset) { 
+    for (size_t i = 0; i < size; i += offset) {
         k += array[i];
     }
     k = 0;
     auto start = std::chrono::high_resolution_clock::now();
     std::set<size_t> used;
-    //size_t l;
-    //int t = 0;
     std::vector<int> randZn;
     randZn.clear();
     for (size_t i = 1; i <= size / offset; i++) {
@@ -73,8 +70,7 @@ double randomExperiment(size_t size, int testCount) {
     srand(unsigned(time(0)));
     random_shuffle(randZn.begin(), randZn.end());
     for (size_t i = 0; i < size / offset; i ++) {
-        //std::cout << randZn[i] << std::endl;                
-        k += array[randZn[i]];    
+        k += array[randZn[i]];
     }
     }
     auto end = std::chrono::high_resolution_clock::now();
