@@ -83,7 +83,6 @@ TEST(Test, straightBackExperiment) {
     std::cout << "      number: 5" << std::endl;
     std::cout << "      input_data:" << std::endl;
     std::cout << "        buffer_size: \"10.5mb\"" << std::endl;
-    rarr = 9 * 1024 * 1024; //размер массива
     std::cout << "      results:" << std::endl;
     std::cout << "        duration: \"" <<
         backExperiment(sizeBuffert[4], tCount) << "\"" << std::endl;
