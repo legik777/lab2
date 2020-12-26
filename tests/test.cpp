@@ -1,8 +1,7 @@
 // Copyright 2020 Andreytorix
-#include "cache.hpp"
+#include "../include/cache.hpp"
 #include <iostream>
 #include <gtest/gtest.h>
-#include "../sources/cache.cpp"
 TEST(Test, straightBackExperiment) {
         std::cout << "investigaion:" << std::endl;
     std::cout << "  travel_order: \"straight\"" << std::endl;
