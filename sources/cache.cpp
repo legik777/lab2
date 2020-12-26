@@ -17,53 +17,46 @@ int* initMem(int len) {
     return arr;
 }
 //Эксперимент прямой
-double straightExperiment(size_t size, int testCount) { //функция для прямого эксперимента
-  //  std::cout << "straightExperiment start" << std::endl;
+//функция для прямого эксперимента
+double straightExperiment(size_t size,
+                          int testCount) { 
     int*  array = initMem(size); //функция инициализация памяти
     int k;
-    for (size_t i = 0; i < size; i += offset) { //обращение к элементам массива (прогрев)
+    for (size_t i = 0; i < size; i += offset) { 
         k += array[i];
     }
     k = 0;
-    //Начало эксперимента 
-    auto start = std::chrono::high_resolution_clock::now(); //запоминаем текущее время  для подсчёта времени эксперимента
-    for (size_t i = 0; i < size * testCount; i += offset) { // эксперимент с заданным кол-вом повторений
+    auto start = std::chrono::high_resolution_clock::now(); 
+    for (size_t i = 0; i < size * testCount; i += offset) { 
         k += array[i % size];
     }
-    auto end = std::chrono::high_resolution_clock::now(); //запоминаем время конца эксперимента
+    auto end = std::chrono::high_resolution_clock::now();
     delete[] array;
    // std::cout << "straightExperiment stop" << std::endl;
     return
         static_cast<double>\
-        (std::chrono::nanoseconds(end - start).count()) / testCount; //считаем время эксперимента и делим на количество попыток
+        (std::chrono::nanoseconds(end - start).count()) / testCount;
     
 }
-
-//Эксперимент обратный
-double backExperiment(size_t size, int testCount) { //эксперимент обратный 
-   // std::cout << "backExperiment start" << std::endl;
+double backExperiment(size_t size, int testCount) {
     int* array = initMem(size);
     int k = 0;
-    //обращение к элементам массива (прогрев)
     for (size_t i = 0; i < size; i += offset) {
         k += array[i];
     }
     k = 0;
-    //начало эксперимента
     auto start = std::chrono::high_resolution_clock::now();
-    for (size_t i = size * testCount; i > 0; i -= offset) { //обратный порядок обращения к элементам массива
+    for (size_t i = size * testCount; i > 0; i -= offset) {
         k += array[i % size];
-       // std::cout << i << std::endl;
     }
     auto end = std::chrono::high_resolution_clock::now();
     delete[] array;
-  //  std::cout << "backExperiment stop" << std::endl;
     return
         static_cast<double>\
-        (std::chrono::nanoseconds(end - start).count()) / testCount; //среднее время эксперимента
+        (std::chrono::nanoseconds(end - start).count()) / testCount;
 }
 
-double randomExperiment(size_t size, int testCount) { //эксперимент с рандомным обращение
+double randomExperiment(size_t size, int testCount) {
     int* array = initMem(size);
     int k = 0;
     for (size_t i = 0; i < size; i += offset) { 
@@ -82,11 +75,10 @@ double randomExperiment(size_t size, int testCount) { //эксперимент �
     for (int j = 0; j < testCount; j++) {
     srand(unsigned(time(0)));
     random_shuffle(randZn.begin(), randZn.end());
-    for (size_t i = 0; i < size / offset; i ++) { //рандомное обращение к памяти
+    for (size_t i = 0; i < size / offset; i ++) {
         //std::cout << randZn[i] << std::endl;                
         k += array[randZn[i]];    
     }
-    //std::cout << "Test # " << j << std::endl;
     }
     auto end = std::chrono::high_resolution_clock::now();
     delete[] array;
@@ -95,8 +87,6 @@ double randomExperiment(size_t size, int testCount) { //эксперимент �
 }
 int main()
 {
-    //i5-10210U
-
     std::cout << "investigaion:" << std::endl;
     std::cout << "  travel_order: \"straight\"" << std::endl;
     std::cout << "  experiments:" << std::endl;
@@ -135,10 +125,6 @@ int main()
     rarr = 9 * 1024 * 1024; //размер массива
     std::cout << "      results:" << std::endl;
     std::cout << "        duration: \"" << straightExperiment(rarr, tCount) << "\"" << std::endl;
-
-
-
-
     std::cout << "investigaion:" << std::endl;
     std::cout << "  travel_order: \"back\"" << std::endl;
     std::cout << "  experiments:" << std::endl;
@@ -177,8 +163,6 @@ int main()
     rarr = 9 * 1024 * 1024; //размер массива
     std::cout << "      results:" << std::endl;
     std::cout << "        duration: \"" << backExperiment(rarr, tCount) << "\"" << std::endl;
-
-
     std::cout << "investigaion:" << std::endl;
     std::cout << "  travel_order: \"random\"" << std::endl;
     std::cout << "  experiments:" << std::endl;
