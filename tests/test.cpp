@@ -137,8 +137,8 @@ TEST(Test, straightBackExperiment) {
     std::cout << "        duration: \"" <<
         randomExperiment(rarr, tCount) << "\"" << std::endl;*/
     bool t1 = false;
-    t1 = (straightExperiment(rarr, tCount)
+    t1 = (straightExperiment(sizeBuffert[0], tCount)
             < randomExperiment(sizeBuffert[0], tCount))
-            && (backExperiment(sizeBuffert[0], tCount) < randomExperiment(rarr, tCount));
+            && (backExperiment(sizeBuffert[0], tCount) < randomExperiment(sizeBuffert[0], tCount));
         EXPECT_EQ(t1, true);
 }
