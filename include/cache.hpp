@@ -9,4 +9,4 @@
 #include <set>
 
 static const size_t offset = 16;
-static const int testCount = 1000;
+static const int tCount = 1000;
