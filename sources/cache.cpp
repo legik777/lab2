@@ -9,6 +9,7 @@ int* initMem(int len) {
         arr[i] = std::rand();
        int k = arr[i];
     }
+    k = 0;
     return arr;
 }
 
