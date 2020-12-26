@@ -14,7 +14,7 @@ TEST(Test, straightBackExperiment) {
     int rarr = 0.150 * 1024 * 1024; //размер массива
     std::cout << "      results:" << std::endl;
     std::cout << "        duration: \"" <<
-        straightExperiment(rarr, tCount) << "\"" << std::endl;
+        testExperiments::straightExperiment(rarr, tCount) << "\"" << std::endl;
     std::cout << "  - experiment:" << std::endl;
     std::cout << "      number: 2" << std::endl;
     std::cout << "      input_data:" << std::endl;
