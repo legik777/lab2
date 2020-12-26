@@ -76,13 +76,13 @@ double randomExperiment(size_t size, int testCount) { //эксперимент �
     int t = 0;
     std::vector<int> randZn;
     randZn.clear();
-    for (int i = 1; i <= size / offset; i++) {
+    for (size_t i = 1; i <= size / offset; i++) {
         randZn.push_back(i);
     }
     for (int j = 0; j < testCount; j++) {
     srand(unsigned(time(0)));
     random_shuffle(randZn.begin(), randZn.end());
-    for (int i = 0; i < size / offset; i ++) { //рандомное обращение к памяти
+    for (size_t i = 0; i < size / offset; i ++) { //рандомное обращение к памяти
         //std::cout << randZn[i] << std::endl;                
         k += array[randZn[i]];    
     }
