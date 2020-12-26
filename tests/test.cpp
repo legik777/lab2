@@ -1,5 +1,6 @@
 // Copyright 2020 Andreytorix
 #include "cache.hpp"
+#include <iostream>
 #include <gtest/gtest.h>
     std::cout << "investigaion:" << std::endl;
     std::cout << "  travel_order: \"straight\"" << std::endl;
