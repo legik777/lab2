@@ -7,9 +7,8 @@ int* initMem(int len) {
     int* arr = new int[len];
     for (int i = 0; i < len; i++) {
         arr[i] = std::rand();
-       int k = arr[i];
+       int y = arr[i];
     }
-    k = 0;
     return arr;
 }
 
