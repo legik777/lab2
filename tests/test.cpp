@@ -30,7 +30,7 @@ TEST(Test, straightBackExperiment) {
     std::cout << "  - experiment:" << std::endl;
     std::cout << "      number: 3" << std::endl;
     std::cout << "      input_data:" << std::endl;
-    std::cout << "        buffer_size: \"0.5mb\"" << std::endl;
+    std::cout << "        buffer_size: \"5mb\"" << std::endl;
     std::cout << "      results:" << std::endl;
     std::cout << "        duration: \"" <<
         straightExperiment(sizeBuffert[2], tCount) << "\"" << std::endl;
