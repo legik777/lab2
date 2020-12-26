@@ -1,8 +1,12 @@
 // Copyright 2020 Andreytorix
 #include <cache.hpp>
 
+void voidFunc(int p) {
+    p = p + 1;
+}
 //инициализация памяти
 //прогрев памяти
+
 int* initMem(int len) {
     int* arr = new int[len];
     for (int i = 0; i < len; i++) {
@@ -10,11 +14,7 @@ int* initMem(int len) {
        int y = arr[i];
        voidFunc(y);
     }
-    
     return arr;
-}
-void voidFunc(int p) {
-    p = p + 1;
 }
 //Эксперимент прямой
 double straightExperiment(size_t size, int *arr, int testCount) { //функция для прямого эксперимента
