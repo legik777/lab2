@@ -2,7 +2,7 @@
 #include "../include/cache.hpp"
 #include <gtest/gtest.h>
 TEST(Test, straightBackExperiment) {
-    long int sizeBuffert[5] = { cache_Size[0] * 1024 * 1024, cache_Size[1] * 1024 * 1024,
+    int sizeBuffert[5] = { cache_Size[0] * 1024 * 1024, cache_Size[1] * 1024 * 1024,
                                cache_Size[2] * 1024 * 1024,
                                cache_Size[3] * 1024 * 1024, cache_Size[4] * 1024 * 1024 };
     for (int i = 0; i < 5; i++) {
@@ -137,7 +137,7 @@ TEST(Test, straightBackExperiment) {
     bool t1 = false;
     rarr = 0.150 * 1024 * 1024; //размер массива
     t1 = (straightExperiment(rarr, tCount)
-            < randomExperiment(rarr, tCount))
-            && (backExperiment(rarr, tCount) < randomExperiment(rarr, tCount));
+            < randomExperiment(sizeBuffert[0], tCount))
+            && (backExperiment(sizeBuffert[0], tCount) < randomExperiment(rarr, tCount));
         EXPECT_EQ(t1, true);
 }
