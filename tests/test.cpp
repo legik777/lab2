@@ -2,7 +2,9 @@
 #include "cache.hpp"
 #include <iostream>
 #include <gtest/gtest.h>
-    std::cout << "investigaion:" << std::endl;
+
+TEST(Test, straightBackExperiment) {
+        std::cout << "investigaion:" << std::endl;
     std::cout << "  travel_order: \"straight\"" << std::endl;
     std::cout << "  experiments:" << std::endl;
     std::cout << "  - experiment:" << std::endl;
@@ -131,7 +133,6 @@
     std::cout << "      results:" << std::endl;
     std::cout << "        duration: \"" <<
         randomExperiment(rarr, tCount) << "\"" << std::endl;
-TEST(Test, straightBackExperiment) {
     bool t1 = false;
     int rarr = 0.150 * 1024 * 1024; //размер массива
     if (straightExperiment(rarr, tCount)
