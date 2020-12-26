@@ -18,7 +18,7 @@ int* initMem(int len) {
 double straightExperiment(size_t size,
                           int testCount) {
     int*  array = initMem(size);
-    int k;
+    int k = 0;
     for (size_t i = 0; i < size; i += offset) {
         k += array[i];
     }
