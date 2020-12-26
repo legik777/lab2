@@ -16,7 +16,7 @@ TEST(Test, straightBackExperiment) {
     std::cout << "  - experiment:" << std::endl;
     std::cout << "      number: 1" << std::endl;
     std::cout << "      input_data:" << std::endl;
-    std::cout << "        buffer_size: \"0.150mb\"" << std::endl;
+    std::cout << "        buffer_size: \"0.320mb\"" << std::endl;
     std::cout << "      results:" << std::endl;
     std::cout << "        duration: \"" <<
        straightExperiment(sizeBuffert[0], tCount) << "\"" << std::endl;
@@ -30,21 +30,21 @@ TEST(Test, straightBackExperiment) {
     std::cout << "  - experiment:" << std::endl;
     std::cout << "      number: 3" << std::endl;
     std::cout << "      input_data:" << std::endl;
-    std::cout << "        buffer_size: \"0.640mb\"" << std::endl;
+    std::cout << "        buffer_size: \"0.5mb\"" << std::endl;
     std::cout << "      results:" << std::endl;
     std::cout << "        duration: \"" <<
         straightExperiment(sizeBuffert[2], tCount) << "\"" << std::endl;
     std::cout << "  - experiment:" << std::endl;
     std::cout << "      number: 4" << std::endl;
     std::cout << "      input_data:" << std::endl;
-    std::cout << "        buffer_size: \"0.640mb\"" << std::endl;
+    std::cout << "        buffer_size: \"7mb\"" << std::endl;
     std::cout << "      results:" << std::endl;
     std::cout << "        duration: \"" <<
         straightExperiment(sizeBuffert[3], tCount) << "\"" << std::endl;
     std::cout << "  - experiment:" << std::endl;
     std::cout << "      number: 5" << std::endl;
     std::cout << "      input_data:" << std::endl;
-    std::cout << "        buffer_size: \"0.640mb\"" << std::endl;
+    std::cout << "        buffer_size: \"10.5mb\"" << std::endl;
     std::cout << "      results:" << std::endl;
     std::cout << "        duration: \"" <<
         straightExperiment(sizeBuffert[4], tCount) << "\"" << std::endl;
