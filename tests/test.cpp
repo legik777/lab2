@@ -137,7 +137,6 @@ TEST(Test, straightBackExperiment) {
     std::cout << "        duration: \"" <<
         randomExperiment(rarr, tCount) << "\"" << std::endl;*/
     bool t1 = false;
-    rarr = 0.150 * 1024 * 1024; //размер массива
     t1 = (straightExperiment(rarr, tCount)
             < randomExperiment(sizeBuffert[0], tCount))
             && (backExperiment(sizeBuffert[0], tCount) < randomExperiment(rarr, tCount));
