@@ -4,8 +4,6 @@
 void voidFunc(int p) {
     p = p + 1;
 }
-//инициализация памяти
-//прогрев памяти
 
 int* initMem(int len) {
     int* arr = new int[len];
@@ -16,11 +14,10 @@ int* initMem(int len) {
     }
     return arr;
 }
-//Эксперимент прямой
-//функция для прямого эксперимента
+
 double straightExperiment(size_t size,
                           int testCount) { 
-    int*  array = initMem(size); //функция инициализация памяти
+    int*  array = initMem(size); 
     int k;
     for (size_t i = 0; i < size; i += offset) { 
         k += array[i];
