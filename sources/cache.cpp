@@ -17,7 +17,7 @@ int* initMem(int len) {
 double straightExperiment(size_t size, int *arr, int testCount) { //функция для прямого эксперимента
   //  std::cout << "straightExperiment start" << std::endl;
     int*  array = initMem(size); //функция инициализация памяти
-    int k = 0;
+    int k;
     for (size_t i = 0; i < size; i += offset) { //обращение к элементам массива (прогрев)
         k += array[i];
     }
@@ -103,35 +103,38 @@ int main()
     std::cout << "        buffer_size: \"0.150mb\"" << std::endl;
     int rarr = 0.150 * 1024 * 1024; //размер массива
     std::cout << "      results:" << std::endl;
-    std::cout << "        duration: \"" << straightExperiment(rarr, initMem(rarr), testCount) << "\"" << std::endl;
+    std::cout << "        duration: \"" << straightExperiment(rarr, initMem(rarr), tCount) << "\"" << std::endl;
     std::cout << "  - experiment:" << std::endl;
     std::cout << "      number: 2" << std::endl;
     std::cout << "      input_data:" << std::endl;
     std::cout << "        buffer_size: \"0.640mb\"" << std::endl;
     rarr = 0.640 * 1024 * 1024; //размер массива
     std::cout << "      results:" << std::endl;
-    std::cout << "        duration: \"" << straightExperiment(rarr, initMem(rarr), testCount) << "\"" << std::endl;
+    std::cout << "        duration: \"" << straightExperiment(rarr, initMem(rarr), tCount) << "\"" << std::endl;
     std::cout << "  - experiment:" << std::endl;
     std::cout << "      number: 3" << std::endl;
     std::cout << "      input_data:" << std::endl;
     std::cout << "        buffer_size: \"0.640mb\"" << std::endl;
     rarr = 5 * 1024 * 1024; //размер массива
     std::cout << "      results:" << std::endl;
-    std::cout << "        duration: \"" << straightExperiment(rarr, initMem(rarr), testCount) << "\"" << std::endl;
+    std::cout << "        duration: \"" << straightExperiment(rarr, initMem(rarr), tCount) << "\"" << std::endl;
     std::cout << "  - experiment:" << std::endl;
     std::cout << "      number: 4" << std::endl;
     std::cout << "      input_data:" << std::endl;
     std::cout << "        buffer_size: \"0.640mb\"" << std::endl;
     rarr = 7 * 1024 * 1024; //размер массива
     std::cout << "      results:" << std::endl;
-    std::cout << "        duration: \"" << straightExperiment(rarr, initMem(rarr), testCount) << "\"" << std::endl;
+    std::cout << "        duration: \"" << straightExperiment(rarr, initMem(rarr), tCount) << "\"" << std::endl;
     std::cout << "  - experiment:" << std::endl;
     std::cout << "      number: 5" << std::endl;
     std::cout << "      input_data:" << std::endl;
     std::cout << "        buffer_size: \"0.640mb\"" << std::endl;
     rarr = 9 * 1024 * 1024; //размер массива
     std::cout << "      results:" << std::endl;
-    std::cout << "        duration: \"" << straightExperiment(rarr, initMem(rarr), testCount) << "\"" << std::endl;
+    std::cout << "        duration: \"" << straightExperiment(rarr, initMem(rarr), tCount) << "\"" << std::endl;
+
+
+
 
     std::cout << "investigaion:" << std::endl;
     std::cout << "  travel_order: \"back\"" << std::endl;
@@ -142,35 +145,35 @@ int main()
     std::cout << "        buffer_size: \"0.150mb\"" << std::endl;
     rarr = 0.150 * 1024 * 1024; //размер массива
     std::cout << "      results:" << std::endl;
-    std::cout << "        duration: \"" << backExperiment(rarr, initMem(rarr), testCount) << "\"" << std::endl;
+    std::cout << "        duration: \"" << backExperiment(rarr, initMem(rarr), tCount) << "\"" << std::endl;
     std::cout << "  - experiment:" << std::endl;
     std::cout << "      number: 2" << std::endl;
     std::cout << "      input_data:" << std::endl;
     std::cout << "        buffer_size: \"0.640mb\"" << std::endl;
     rarr = 0.640 * 1024 * 1024; //размер массива
     std::cout << "      results:" << std::endl;
-    std::cout << "        duration: \"" << backExperiment(rarr, initMem(rarr), testCount) << "\"" << std::endl;
+    std::cout << "        duration: \"" << backExperiment(rarr, initMem(rarr), tCount) << "\"" << std::endl;
     std::cout << "  - experiment:" << std::endl;
     std::cout << "      number: 3" << std::endl;
     std::cout << "      input_data:" << std::endl;
     std::cout << "        buffer_size: \"0.640mb\"" << std::endl;
     rarr = 5 * 1024 * 1024; //размер массива
     std::cout << "      results:" << std::endl;
-    std::cout << "        duration: \"" << backExperiment(rarr, initMem(rarr), testCount) << "\"" << std::endl;
+    std::cout << "        duration: \"" << backExperiment(rarr, initMem(rarr), tCount) << "\"" << std::endl;
     std::cout << "  - experiment:" << std::endl;
     std::cout << "      number: 4" << std::endl;
     std::cout << "      input_data:" << std::endl;
     std::cout << "        buffer_size: \"0.640mb\"" << std::endl;
     rarr = 7 * 1024 * 1024; //размер массива
     std::cout << "      results:" << std::endl;
-    std::cout << "        duration: \"" << backExperiment(rarr, initMem(rarr), testCount) << "\"" << std::endl;
+    std::cout << "        duration: \"" << backExperiment(rarr, initMem(rarr), tCount) << "\"" << std::endl;
     std::cout << "  - experiment:" << std::endl;
     std::cout << "      number: 5" << std::endl;
     std::cout << "      input_data:" << std::endl;
     std::cout << "        buffer_size: \"0.640mb\"" << std::endl;
     rarr = 9 * 1024 * 1024; //размер массива
     std::cout << "      results:" << std::endl;
-    std::cout << "        duration: \"" << backExperiment(rarr, initMem(rarr), testCount) << "\"" << std::endl;
+    std::cout << "        duration: \"" << backExperiment(rarr, initMem(rarr), tCount) << "\"" << std::endl;
 
 
     std::cout << "investigaion:" << std::endl;
@@ -182,33 +185,33 @@ int main()
     std::cout << "        buffer_size: \"0.150mb\"" << std::endl;
     rarr = 0.150 * 1024 * 1024; //размер массива
     std::cout << "      results:" << std::endl;
-    std::cout << "        duration: \"" << randomExperiment(rarr, initMem(rarr), testCount) << "\"" << std::endl;
+    std::cout << "        duration: \"" << randomExperiment(rarr, initMem(rarr), tCount) << "\"" << std::endl;
     std::cout << "  - experiment:" << std::endl;
     std::cout << "      number: 2" << std::endl;
     std::cout << "      input_data:" << std::endl;
     std::cout << "        buffer_size: \"0.640mb\"" << std::endl;
     rarr = 0.640 * 1024 * 1024; //размер массива
     std::cout << "      results:" << std::endl;
-    std::cout << "        duration: \"" << randomExperiment(rarr, initMem(rarr), testCount) << "\"" << std::endl;
+    std::cout << "        duration: \"" << randomExperiment(rarr, initMem(rarr), tCount) << "\"" << std::endl;
     std::cout << "  - experiment:" << std::endl;
     std::cout << "      number: 3" << std::endl;
     std::cout << "      input_data:" << std::endl;
     std::cout << "        buffer_size: \"0.640mb\"" << std::endl;
     rarr = 5 * 1024 * 1024; //размер массива
     std::cout << "      results:" << std::endl;
-    std::cout << "        duration: \"" << randomExperiment(rarr, initMem(rarr), testCount) << "\"" << std::endl;
+    std::cout << "        duration: \"" << randomExperiment(rarr, initMem(rarr), tCount) << "\"" << std::endl;
     std::cout << "  - experiment:" << std::endl;
     std::cout << "      number: 4" << std::endl;
     std::cout << "      input_data:" << std::endl;
     std::cout << "        buffer_size: \"0.640mb\"" << std::endl;
     rarr = 7 * 1024 * 1024; //размер массива
     std::cout << "      results:" << std::endl;
-    std::cout << "        duration: \"" << randomExperiment(rarr, initMem(rarr), testCount) << "\"" << std::endl;
+    std::cout << "        duration: \"" << randomExperiment(rarr, initMem(rarr), tCount) << "\"" << std::endl;
     std::cout << "  - experiment:" << std::endl;
     std::cout << "      number: 5" << std::endl;
     std::cout << "      input_data:" << std::endl;
     std::cout << "        buffer_size: \"0.640mb\"" << std::endl;
     rarr = 9 * 1024 * 1024; //размер массива
     std::cout << "      results:" << std::endl;
-    std::cout << "        duration: \"" << randomExperiment(rarr, initMem(rarr), testCount) << "\"" << std::endl;
+    std::cout << "        duration: \"" << randomExperiment(rarr, initMem(rarr), tCount) << "\"" << std::endl;
 }
