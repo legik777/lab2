@@ -134,8 +134,7 @@ TEST(Test, straightBackExperiment) {
         randomExperiment(rarr, tCount) << "\"" << std::endl;
     bool t1 = false;
     rarr = 0.150 * 1024 * 1024; //размер массива
-    if (straightExperiment(rarr, tCount)
-        < backExperiment(rarr, tCount)) {
+    t1 = straightExperiment(rarr, tCount)
+            > backExperiment(rarr, tCount);
         EXPECT_EQ(t1, true);
-    }
 }
