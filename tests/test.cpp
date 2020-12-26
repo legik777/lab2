@@ -46,6 +46,7 @@ TEST(Test, straightBackExperiment) {
     std::cout << "      results:" << std::endl;
     std::cout << "        duration: \"" <<
         straightExperiment(sizeBuffert[4], tCount) << "\"" << std::endl;
+    /*
     std::cout << "investigaion:" << std::endl;
     std::cout << "  travel_order: \"back\"" << std::endl;
     std::cout << "  experiments:" << std::endl;
@@ -53,6 +54,7 @@ TEST(Test, straightBackExperiment) {
     std::cout << "      number: 1" << std::endl;
     std::cout << "      input_data:" << std::endl; 
     std::cout << "        buffer_size: \"0.150mb\"" << std::endl;
+    
     rarr = 0.150 * 1024 * 1024; //размер массива
     std::cout << "      results:" << std::endl;
     std::cout << "        duration: \"" <<
@@ -131,7 +133,7 @@ TEST(Test, straightBackExperiment) {
     rarr = 9 * 1024 * 1024; //размер массива
     std::cout << "      results:" << std::endl;
     std::cout << "        duration: \"" <<
-        randomExperiment(rarr, tCount) << "\"" << std::endl;
+        randomExperiment(rarr, tCount) << "\"" << std::endl;*/
     bool t1 = false;
     rarr = 0.150 * 1024 * 1024; //размер массива
     t1 = (straightExperiment(rarr, tCount)
