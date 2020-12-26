@@ -1,4 +1,6 @@
 // Copyright 2020 Andreytorix
+#ifndef CACHE_HPP
+#define CACHE_HPP
 #pragma once
 #include <iostream>
 #include <vector>
@@ -14,3 +16,4 @@ int* initMem(int len);
 double straightExperiment(size_t size, int testCount);
 double backExperiment(size_t size, int testCount);
 double randomExperiment(size_t size, int testCount);
+#endif
