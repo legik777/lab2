@@ -7,7 +7,7 @@ TEST(Test, straightBackExperiment) {
                           static_cast<int>(cache_Size[2] * 1024 * 1024),
                           static_cast<int>(cache_Size[3] * 1024 * 1024),
                           static_cast<int>(cache_Size[4] * 1024 * 1024)};
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 5; ++i) {
     std::cout << sizeBuffert[i] <<std::endl;
     }
     std::cout << "investigaion:" << std::endl;
